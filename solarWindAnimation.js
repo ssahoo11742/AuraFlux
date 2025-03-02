@@ -79,9 +79,10 @@ function createSolarWindAnimation(scene, earth, solarWindData) {
 
                 // Fade the color as it trails off
                 const alpha = 1 - (j / trailLength); // Calculate alpha based on trail position
-                col[(i * trailLength + j) * 3] = col[(i * trailLength + (j - 1)) * 3]; // R
-                col[(i * trailLength + j) * 3 + 1] = col[(i * trailLength + (j - 1)) * 3 + 1]; // G
-                col[(i * trailLength + j) * 3 + 2] = col[(i * trailLength + (j - 1)) * 3 + 2] * alpha; // B (fades out)
+                col[(i * trailLength + j) * 3] = col[(i * trailLength + (j - 1)) * 3]; // R (keep strong red)
+                col[(i * trailLength + j) * 3 + 1] = col[(i * trailLength + (j - 1)) * 3 + 1] * 0.9; // G (slightly reduce green)
+                col[(i * trailLength + j) * 3 + 2] = col[(i * trailLength + (j - 1)) * 3 + 2] * 0.5 * alpha; // B (fade out blue faster)
+                
             }
 
             // Update the head of the particle trail based on solar wind speed
@@ -152,7 +153,7 @@ function resetParticle(i, positions, velocities, colors, trailLength) {
     for (let j = 0; j < trailLength; j++) {
         colors[(i * trailLength + j) * 3] = 1.0; // R (Yellow for solar wind)
         colors[(i * trailLength + j) * 3 + 1] = 1.0; // G
-        colors[(i * trailLength + j) * 3 + 2] = 0.0; // B
+        colors[(i * trailLength + j) * 3 + 2] = 1.0; // B
     }
 }
 

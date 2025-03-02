@@ -49,7 +49,12 @@ loadingScreen.innerHTML = '<div class="loading-text">L O A D I N G...</div>';
 const loadingBar = document.createElement('div');
 loadingBar.style.width = '80%';
 loadingBar.style.height = '20px';
-loadingBar.style.backgroundColor = 'grey';
+
+loadingBar.style.borderColor = "white";
+loadingBar.style.borderWidth = "2px"
+loadingBar.style.borderBlockStyle = "solid"
+loadingBar.style.borderRadius = "0%"
+loadingBar.style.padding = "1%"
 loadingBar.style.borderRadius = '10px'; 
 loadingBar.style.overflow = 'hidden';
 loadingBar.style.position = 'relative'; 
@@ -59,7 +64,7 @@ loadingScreen.appendChild(loadingBar);
 const loadingProgress = document.createElement('div');
 loadingProgress.style.height = '100%'; 
 loadingProgress.style.width = '0%';
-loadingProgress.style.backgroundColor = 'green'; 
+loadingProgress.style.backgroundColor = 'white'; 
 loadingProgress.style.transition = 'width 0.5s'; 
 loadingBar.appendChild(loadingProgress); 
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solus Aurora - Intro</title>
+  <title>AuraFlux</title>
   <style>
     /* Import custom fonts */
     @font-face {
@@ -48,6 +48,9 @@
       object-fit: cover;       /* Cover screen without distortion */
     }
 
+    body{
+      background-image: url("textures/8k_stars_milky_way.jpg") ;
+    }
     /* Main content container */
     #introContainer {
       display: flex;
@@ -103,29 +106,131 @@
       background-color: #f0f0f0; /* Light grey background on hover */
       color: #333;               /* Dark grey text on hover */
     }
+    #introContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+#introContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+#topRow {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.info-box {
+    width: 30%;
+    background: rgba(255, 255, 255, 0);
+    border: 2px white solid;
+    font-family: 'Futuristic', sans-serif; 
+    font-weight: bold;
+    margin: 0.5%;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    text-align: left;
+}
+
+.note-box {
+    width: 50%;
+    background: rgba(255, 255, 255, 0);
+    border: 2px white solid;
+    font-family: 'Futuristic', sans-serif; 
+    font-weight: bolder;
+    font-size: larger;
+    margin: 0.5%;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    text-align: left;
+}
+
+#enterBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #topRow {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-box {
+        width: 90%;
+    }
+
+    .note-box {
+        width: 90%;
+    }
+}
+
+
+
   </style>
 </head>
 
 <body>
 
   <!-- Background Video -->
-  <video id="backgroundVideo" autoplay loop muted>
+  <!-- <video id="backgroundVideo" autoplay loop muted>
     <source src="footage/NASATRIM.mp4" type="video/mp4"> 
     Your browser does not support the video tag.
-  </video>
+  </video> -->
 
   <!-- Intro Container -->
   <div id="introContainer">
-    <h1 id="headerText">WELCOME TO SOLUS AURORA</h1>
-    <p id="bodyText">
-      Geomagnetic storms are powerful disturbances in Earth's magnetic field caused by solar activity, particularly coronal mass ejections (CMEs). 
-      When charged particles from the Sun collide with Earth's magnetosphere, they create the stunning aurora borealis (Northern Lights).
-      This website showcases data and analysis from the intense geomagnetic storms of May 2024, which generated some of the most vivid auroras seen worldwide.
-      Our platform features an interactive aurora visibility heatmap, helping users explore the regions most affected.
-      We also provide visualizations of solar winds—streams of charged particles from the Sun that drive these storms and can disrupt satellite communications, GPS, and power grids.
-    </p>
-    <button id="enterBtn">E N T E R</button> 
-  </div>
+    <h1>AuraFlux</h1>
+    <div id="topRow">
+        <div class="info-box">
+            <h2 style="text-align: center;">What are geomagnetic waves?</h2>
+            <hr>
+            <p>Geomagnetic waves are disturbances in the Earth’s magnetic field. They are usually caused by solar flares and other sudden, drastic changes such as plasma interactions and Earth’s inner currents.</p>
+        </div>
+
+        <div class="info-box">
+            <h2 style="text-align: center;">What are the fast lines?</h2>
+            <hr>
+            <p>The fast lines zipping across the screen represent all solar winds that happened in the given time frame. The lines pulsate with red and green, indicating the amplitude of effect the Earth's gravitational field has on it.</p>
+        </div>
+
+        <div class="info-box">
+            <h2 style="text-align: center;">What is the heatmap?</h2>
+            <hr>
+            <p>The heatmap shows the strength of aurora visibility of the region</p>
+        </div>
+    </div>
+
+    <div class="note-box">
+        <h2 style="text-align: center;">Note</h2>
+        <hr>
+        <p>The simulation only represents solar winds and cases of geomagnetic activity during the month of May in 2024. We chose this month because it had an unusually high amount of geomagnetic activity.</p>
+    </div>
+
+    <button id="enterBtn">E N T E R</button>
+</div>
+
+
 
   <script>
     // Function to handle button click and fade-out before navigation

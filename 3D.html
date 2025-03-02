@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>GeoGimp</title>
+  <title>AuraFlux</title>
   <style>
     /* Import custom Futuristic font */
     @font-face {
@@ -31,8 +31,8 @@
       top: 10px;
       font-size: 12px;
       padding: 10px;
-      background-color: #ffffff;  /* White background */
-      color: rgb(0, 0, 0);        /* Black text */
+      background-color: #000080;  /* White background */
+      color: white;        /* Black text */
       border: none;
       font-family: 'Futuristic', sans-serif; /* Use custom font for buttons */
       border-radius: 5px;         /* Rounded corners */
@@ -64,7 +64,9 @@
       bottom: 20px;
       left: 10px;
       padding: 10px;
-      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+      background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+      color: white;
+      border: white 2px solid;
       border-radius: 5px;
       display: flex;
       flex-direction: column; /* Stack items vertically */
@@ -75,7 +77,7 @@
     #legendGradient {
       width: 200px;
       height: 20px;
-      background: linear-gradient(to right, blue, green, yellow, red); /* Color gradient */
+      background: linear-gradient(to right, green, yellow, orange, red); /* Color gradient */
       margin-bottom: 5px; /* Space between gradient and label */
     }
 
@@ -84,21 +86,21 @@
       text-align: center;
       font-size: 14px;
       font-family: 'Futuristic', sans-serif; /* Use custom font */
-      color: #333; /* Dark text for contrast */
+      color: #ffffffff; /* Dark text for contrast */
     }
   </style>
 </head>
 
 <body>
   <!-- Toggle Buttons -->
-  <!-- <button id="toggleMarkersBtn">Toggle Markers</button>
-  <button id="toggleAuroraHeatmapBtn">Toggle Aurora Heatmap</button> -->
-  <!-- <button id="toggleSolarWindBtn">Toggle Solar Wind</button> New button added -->
+  <button id="toggleMarkersBtn">Toggle Markers</button>
+  <button id="toggleAuroraHeatmapBtn">Toggle Aurora Heatmap</button>
+  <button id="toggleSolarWindBtn">Toggle Solar Wind</button> 
 
   <!-- Heatmap Legend -->
   <div id="legendContainer">
-    <!-- <div id="legendGradient"></div>
-    <div id="legendLabel">Aurora Visibility (Blue = Low, Red = High)</div> -->
+    <div id="legendGradient"></div>
+    <div id="legendLabel">Aurora Visibility (Green = Low, Red = High)</div>
   </div>
 
   <!-- Hidden container for heatmap.js rendering -->
